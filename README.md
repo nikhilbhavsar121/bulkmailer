@@ -9,6 +9,7 @@ A simple bulk email sending service with rate limiting and a web API for control
 *   Web API to start, stop, pause, resume, and monitor the sending process.
 *   Asynchronous task processing using Asynq.
 *   Redis for task queuing and state management.
+*   **Email Simulation:** This application simulates sending emails and logs the action to the console. It does not actually send real emails.
 
 ## Getting Started
 
@@ -67,3 +68,7 @@ email,subject,body
 test1@example.com,Hello,This is a test email.
 test2@example.com,Another one,This is another test email.
 ```
+
+## Rate Limiting
+
+The application uses a sliding window rate limiter to control the number of emails sent. The default rate limit is 100 emails per second. This limit is applied globally to all email sending tasks using the key `GLOBAL`.

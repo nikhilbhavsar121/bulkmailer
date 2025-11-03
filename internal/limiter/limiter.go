@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-const DefaultRateLimit = 1000
+const DefaultRateLimit = 100
 
 type SlidingRateLimiter struct {
 	mu      sync.Mutex
